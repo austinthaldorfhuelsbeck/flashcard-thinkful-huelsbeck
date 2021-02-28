@@ -4,7 +4,7 @@ A local school has decided to put together a flashcard application, Flashcard-o-
 
 ![Flashcard-o-matic!](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/8ad6e17b7d849280a619e4bb69c26baa-home.png)
 
-Bootstrap 4 is included with the starter HTML. You're welcome to use vanilla CSS or Bootstrap 4 for styling your project. However, your finished product does not have to match the styles in the provided screenshots, as you will not be assessed on the styling or responsiveness of the your project.
+Bootstrap 4 is included with the starter HTML. You're welcome to use vanilla CSS or Bootstrap 4 for styling your project. However, your finished product does not have to match the styles in the provided screenshots, as you will not be assessed on the styling or responsiveness of your project.
 
 This project is designed to test your ability to work with rendering and state management using React. Before taking on this module, you should be comfortable with the following:
 
