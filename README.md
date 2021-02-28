@@ -136,6 +136,8 @@ You are tasked with creating the following screens that work with the above data
 
 The Home screen is the first page the user sees. It is displayed at /.
 
+![Home Screen](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/8ad6e17b7d849280a619e4bb69c26baa-home.png)
+
 The Home screen has the following features:
 
 * The path to this screen should be /.
@@ -149,11 +151,15 @@ The Home screen has the following features:
 
 When the user clicks the "Delete" button, a warning message is shown and the user can click "OK" or "Cancel". If the user clicks "OK", the deck is deleted and the deleted deck is no longer visible on the Home screen.
 
-You can use `window.confirm()` to create a modal dialog.
+You can use `window.confirm()` to create the modal dialog shown in the screenshot below.
+
+![Delete Deck prompt](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/ae0a66039ae79eee10554cc7af2fcc20-lete-deck-prompt.png)
 
 ## Study
 
 The Study screen is displayed at /decks/:deckId/study.
+
+![Study](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/e5adaf57aef5e38f4dcd8e7efd0a5dc9-study-first-card.png)
 
 The Study screen has the following features:
 
@@ -171,24 +177,29 @@ The Study screen has the following features:
 
 The next button appears after the card is flipped.
 
+![Next Button](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/5a7d4b1050a592638fc1cf0df3f10cd0-rst-card-flipped.png)
+
 ## Restart prompt
 
 When all cards are finished, a message is shown and the user is offered the opportunity to restart the deck. If the user does not restart the deck, they return to the home screen.
 
-You can use window.confirm() to create the modal dialog shown in the screenshot below.
+You can use `window.confirm()` to create the modal dialog shown in the screenshot below.
+
+![Restart prompt](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/59f672a4dae995dd7bfeed04ab020b70-y-restart-prompt.png)
 
 ## Not enough cards
 
 Studying a Deck with two or fewer cards should display a "Not enough cards" message and a button to add cards to the deck.
 
-Study with not enough cards
+![Not Enough Cards](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/4fea9f95eed721bd25bb2bdfe8f70d3f-not-enough-cards.png)
 
 Clicking the "Add Cards" button should take the user to the Add Card screen.
-Create Deck
+
+## Create Deck
 
 The Home screen has a "Create Deck" button that brings the user to the Create Deck screen.
 
-## Create Deck
+![Create Deck](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/c5806a5777aa468623767d8fa4fa8fe8-deck-create.png)
 
 The Create Deck screen has the following features:
 
@@ -203,6 +214,8 @@ The Create Deck screen has the following features:
 ## Deck
 
 The Deck screen displays all of the information about a deck.
+
+![Deck Screen](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/f63b8bedaaf37cd8c3245febe6f0275f-deck.png)
 
 The Deck screen has the following features:
 
@@ -230,11 +243,15 @@ The Deck screen has the following features:
 
 When the user clicks the "Delete" button associated with a card, a warning message is shown and the user can click "OK" or "Cancel". If the user clicks "OK", the card is deleted.
 
-You can use window.confirm() to create a modal dialog.
+You can use `window.confirm()` to create the modal dialog shown in the screenshot below.
+
+![Delete Card Prompt](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/987a95a7cc4470316b38425b8cdb7c84-lete-card-prompt.png)
 
 ## Edit Deck
 
 The Edit Deck screen allows the user to modify information on an existing deck.
+
+![Edit Deck](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/6c34e4b94ba7e983719eda4aa6f60592-deck-edit.png)
 
 The Edit Deck screen has the following features:
 
@@ -246,6 +263,8 @@ The Edit Deck screen has the following features:
 ## Add Card
 
 The Add Card screen allows the user to add a new card to an existing deck.
+
+![Add Card](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/fcc7dde129ed17b6ee199313e1dbc542-card-add.png)
 
 The Add Card screen has the following features:
 
@@ -259,6 +278,8 @@ The Add Card screen has the following features:
 ## Edit Card
 
 The Edit Card screen allows the user to modify information on an existing card.
+
+![Edit Card](https://res.cloudinary.com/strive/image/upload/w_1000,h_1000,c_limit/cd6a1f07574bf8544b0a30d45020a274-card-edit.png)
 
 The Edit Card screen has the following features:
 
