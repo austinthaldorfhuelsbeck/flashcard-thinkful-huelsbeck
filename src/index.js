@@ -1,15 +1,13 @@
 import React from "react";
-import Header from "./Layout/Header";
-import NotFound from "./Layout/NotFound";
+import ReactDOM from "react-dom";
+import App from "./App";
+import { BrowserRouter as Router } from "react-router-dom";
 
-export default function Layout() {
-  return (
-    <div>
-      <Header />
-      <div className="container">
-        {/* TODO: Implement the screen starting here */}
-        <NotFound />
-      </div>
-    </div>
-  );
-}
+ReactDOM.render(
+  <React.StrictMode>
+    <Router>
+      <App />
+    </Router>
+  </React.StrictMode>,
+  document.getElementById("root")
+);
