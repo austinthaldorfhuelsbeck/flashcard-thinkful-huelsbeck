@@ -6,7 +6,7 @@ export default function CreateDeck() {
   return (
     <button
       type="button"
-      class="btn btn-secondary"
+      className="btn btn-secondary"
       onClick={() => history.push("/decks/new")}
     >
       Create Deck
