@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { listDecks } from "../../utils/api";
-import CreateDeck from "./CreateDeck";
+import CreateDeckButton from "./CreateDeckButton";
 import Deck from "./Deck";
 
 export default function Home({ decks, setDecks }) {
@@ -27,7 +27,7 @@ export default function Home({ decks, setDecks }) {
 
   return (
     <div className="container home">
-      <CreateDeck />
+      <CreateDeckButton />
       {renderDecks(decks)}
     </div>
   );

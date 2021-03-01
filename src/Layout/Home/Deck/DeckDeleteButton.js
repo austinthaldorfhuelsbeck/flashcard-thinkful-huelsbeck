@@ -12,7 +12,11 @@ export default function DeleteButton({ id, setRefresh }) {
   };
 
   return (
-    <button type="button" className="btn btn-danger" onClick={handleDelete}>
+    <button
+      type="button"
+      className="btn btn-danger mx-1"
+      onClick={handleDelete}
+    >
       Delete
     </button>
   );
