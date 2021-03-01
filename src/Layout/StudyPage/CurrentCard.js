@@ -1,12 +1,16 @@
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 import FlipButton from "./FlipButton";
 import NextButton from "./NextButton";
+import AddCardsButton from "../AddCardsButton";
 
 export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
   const [isCardFront, setIsCardFront] = useState(true);
-  const card = cards[currentCard];
+  const card = cards[currentCard - 1];
+  const params = useParams();
 
+  // HELPER FUNCTIONS //
   const flipState = () => setIsCardFront(!isCardFront);
   const handleRestart = () => {
     if (
@@ -14,11 +18,11 @@ export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
         "Restart cards? Click 'cancel' to return to the home page."
       )
     ) {
-      setCurrentCard(0);
+      setCurrentCard(1);
     }
   };
   const incrementCard = () => {
-    if (card.id < cards.length) {
+    if (currentCard < cards.length) {
       setCurrentCard(currentCard + 1);
       flipState();
     } else {
@@ -27,31 +31,46 @@ export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
     }
   };
 
-  if (cards.length > 0) {
+  // PROPS //
+  const flipButtonProps = {
+    isCardFront: isCardFront,
+    setIsCardFront: setIsCardFront,
+    flipState: flipState,
+  };
+  const nextButtonProps = {
+    isCardFront: isCardFront,
+    currentCard: currentCard,
+    setCurrentCard: setCurrentCard,
+    incrementCard: incrementCard,
+    flipState: flipState,
+  };
+
+  if (cards.length > 2) {
     return (
-      <div class="card px-3 my-4">
-        <div class="card-body">
-          <div class="row my-1">
-            <h4 class="card-title">
-              Card {currentCard + 1} of {cards.length}
+      <div className="card px-3 my-4">
+        <div className="card-body">
+          <div className="row my-1">
+            <h4 className="card-title">
+              Card {currentCard} of {cards.length}
             </h4>
           </div>
-          <div class="row my-1">{isCardFront ? card.front : card.back}</div>
-          <div class="row my-3">
-            <FlipButton
-              isCardFront={isCardFront}
-              setIsCardFront={setIsCardFront}
-              flipState={flipState}
-            />
-            <NextButton
-              isCardFront={isCardFront}
-              currentCard={currentCard}
-              setCurrentCard={setCurrentCard}
-              incrementCard={incrementCard}
-              flipState={flipState}
-            />
+          <div className="row my-1">{isCardFront ? card.front : card.back}</div>
+          <div className="row my-3">
+            <FlipButton {...flipButtonProps} />
+            <NextButton {...nextButtonProps} />
           </div>
         </div>
+      </div>
+    );
+  }
+  if (cards.length > 0) {
+    return (
+      <div>
+        <h3>Not enough cards.</h3>
+        <p>
+          You need at least 3 cards to study. There are 2 cards in this deck.
+        </p>
+        <AddCardsButton id={params.deckId} />
       </div>
     );
   }
