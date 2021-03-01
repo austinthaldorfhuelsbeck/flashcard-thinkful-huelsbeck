@@ -30,9 +30,9 @@ export default function DeckPage(props) {
   return (
     <div className="container">
       <NavBar currentPage={currentDeck.name} />
-      <DeckHeader />
+      <DeckHeader deck={currentDeck} />
       <h2>Cards</h2>
-      <div class="card">
+      <div class="card my-4">
         <ul class="list-group list-group-flush">{renderCards(cards)}</ul>
       </div>
     </div>

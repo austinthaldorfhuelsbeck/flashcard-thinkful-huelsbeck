@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { listCards } from "../../../utils/api";
 
 import ViewButton from "./ViewButton";
-import StudyButton from "./StudyButton";
+import StudyButton from "../../StudyButton";
 import DeleteButton from "./DeckDeleteButton";
 
 export default function Deck({ deck, key, setRefresh }) {
