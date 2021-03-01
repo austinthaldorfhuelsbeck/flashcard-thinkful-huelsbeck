@@ -8,7 +8,7 @@ export default function FormFront({ handleChange, formData }) {
         id="front"
         className="form-control"
         rows="3"
-        placeholder="...loading"
+        placeholder="Front side of card"
         name="front"
         onChange={handleChange}
         value={formData.front}

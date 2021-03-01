@@ -8,7 +8,7 @@ export default function FormBack({ handleChange, formData }) {
         id="back"
         className="form-control"
         rows="3"
-        placeholder="...loading"
+        placeholder="Back side of card"
         name="back"
         onChange={handleChange}
         value={formData.back}

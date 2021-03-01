@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { updateCard, readCard } from "../../utils/api";
-import FormFront from "./FormFront";
-import FormBack from "./FormBack";
+import FormFront from "../Form/FormFront";
+import FormBack from "../Form/FormBack";
 import CancelButton from "../Form/CancelButton";
 import SubmitButton from "../Form/SubmitButton";
 
