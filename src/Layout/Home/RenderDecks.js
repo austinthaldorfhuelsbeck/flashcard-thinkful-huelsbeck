@@ -2,9 +2,7 @@ import React from "react";
 
 import Deck from "./Deck";
 
-export default function RenderDecks(props) {
-  const { decks, setDecks, setCurrentDeck } = props;
-
+export default function RenderDecks({ decks, setDecks, setCurrentDeck }) {
   if (decks.length > 0) {
     return decks.map((deck, key) => (
       <Deck
