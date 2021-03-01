@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { listCards } from "../../../utils/api";
 
-export default function DeckCard({ deck, key }) {
+import ViewButton from "./ViewButton";
+import StudyButton from "./StudyButton";
+import DeleteButton from "./DeckDeleteButton";
+
+export default function Deck({ deck, key, setRefresh }) {
   const [deckLength, setDeckLength] = useState(0);
 
   useEffect(() => {
@@ -28,6 +32,9 @@ export default function DeckCard({ deck, key }) {
           <h4 className="card-title">{deck.name}</h4>
           {renderLength(deckLength)}
           <h6 className="card-subtitle mb-2 text-muted">{deck.description}</h6>
+          <ViewButton id={deck.id} />
+          <StudyButton id={deck.id} />
+          <DeleteButton id={deck.id} setRefresh={setRefresh} />
         </div>
       </div>
     </div>
