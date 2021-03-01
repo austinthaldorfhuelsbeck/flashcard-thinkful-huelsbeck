@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import FlipButton from "./FlipButton";
 import NextButton from "./NextButton";
 
 export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
+  const [isCardFront, setIsCardFront] = useState(true);
+
   if (cards.length > 0) {
     setCurrentCard(cards[0]);
     return (
@@ -14,10 +16,18 @@ export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
               Card {currentCard.id} of {cards.length}
             </h4>
           </div>
-          <div class="row my-1">{currentCard.front}</div>
+          <div class="row my-1">
+            {isCardFront ? currentCard.front : currentCard.back}
+          </div>
           <div class="row my-3">
-            <FlipButton />
-            <NextButton />
+            <FlipButton
+              isCardFront={isCardFront}
+              setIsCardFront={setIsCardFront}
+            />
+            <NextButton
+              isCardFront={isCardFront}
+              setCurrentCard={setCurrentCard}
+            />
           </div>
         </div>
       </div>
