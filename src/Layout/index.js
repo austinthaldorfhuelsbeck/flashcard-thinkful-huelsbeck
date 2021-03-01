@@ -8,6 +8,7 @@ import NotFound from "./NotFound";
 
 export default function Layout() {
   const [decks, setDecks] = useState([]);
+  const [cards, setCards] = useState([]);
 
   return (
     <div className="container">
@@ -17,7 +18,7 @@ export default function Layout() {
           <Home decks={decks} setDecks={setDecks} />
         </Route>
         <Route path="/decks/:deckId">
-          <DeckPage />
+          <DeckPage cards={cards} setCards={setCards} />
         </Route>
         <Route>
           <NotFound />

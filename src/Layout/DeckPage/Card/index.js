@@ -1,5 +1,20 @@
 import React from "react";
 
-export default function Card({ card, key, setCards, setRefresh }) {
-  return <p>Card</p>;
+import CardEditButton from "./CardEditButton";
+import CardDeleteButton from "./CardDeleteButton";
+
+export default function Card({ card, key, setRefresh }) {
+  return (
+    <li id={key} className="list-group-item">
+      <div className="row">
+        <div className="col col-6">{card.front}</div>
+        <div className="col col-6">
+          {card.back}
+          <br />
+          <CardEditButton id={card.id} />
+          <CardDeleteButton id={card.id} setRefresh={setRefresh} />
+        </div>
+      </div>
+    </li>
+  );
 }
