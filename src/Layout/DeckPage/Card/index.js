@@ -3,7 +3,7 @@ import React from "react";
 import CardEditButton from "./CardEditButton";
 import CardDeleteButton from "./CardDeleteButton";
 
-export default function Card({ card, key, setRefresh }) {
+export default function Card({ card, key }) {
   return (
     <li id={key} className="list-group-item">
       <div className="row">
@@ -12,7 +12,7 @@ export default function Card({ card, key, setRefresh }) {
           {card.back}
           <br />
           <CardEditButton id={card.id} />
-          <CardDeleteButton id={card.id} setRefresh={setRefresh} />
+          <CardDeleteButton id={card.id} />
         </div>
       </div>
     </li>

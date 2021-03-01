@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FlipButton({ isCardFront, setIsCardFront, flipState }) {
+export default function FlipButton({ flipState }) {
   return (
     <button
       type="button"

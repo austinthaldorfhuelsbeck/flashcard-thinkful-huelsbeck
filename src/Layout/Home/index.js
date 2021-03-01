@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import { listDecks } from "../../utils/api";
 import CreateDeckButton from "./CreateDeckButton";
 import Deck from "./Deck";
 
-export default function Home({ decks, setDecks, setCurrentDeck }) {
-  const [refresh, setRefresh] = useState([]);
+export default function Home(props) {
+  const { decks, setDecks, setCurrentDeck } = props;
 
   useEffect(() => {
     listDecks().then(setDecks);
-  }, [refresh]);
+  }, []);
 
   const renderDecks = (decks) => {
     if (decks.length > 0) {
@@ -19,7 +19,6 @@ export default function Home({ decks, setDecks, setCurrentDeck }) {
           key={key}
           setDecks={setDecks}
           setCurrentDeck={setCurrentDeck}
-          setRefresh={setRefresh}
         />
       ));
     }

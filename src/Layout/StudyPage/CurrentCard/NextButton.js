@@ -1,11 +1,6 @@
 import React from "react";
 
-export default function NextButton({
-  isCardFront,
-  currentCard,
-  setCurrentCard,
-  incrementCard,
-}) {
+export default function NextButton({ isCardFront, incrementCard }) {
   return (
     !isCardFront && (
       <button
