@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 import FlipButton from "./FlipButton";
 import NextButton from "./NextButton";
@@ -9,6 +9,7 @@ export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
   const [isCardFront, setIsCardFront] = useState(true);
   const card = cards[currentCard - 1];
   const params = useParams();
+  const history = useHistory();
 
   // HELPER FUNCTIONS //
   const flipState = () => setIsCardFront(!isCardFront);
@@ -19,6 +20,8 @@ export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
       )
     ) {
       setCurrentCard(1);
+    } else {
+      history.push("/");
     }
   };
   const incrementCard = () => {
