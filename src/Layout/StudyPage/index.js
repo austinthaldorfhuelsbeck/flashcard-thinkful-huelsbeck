@@ -7,9 +7,14 @@ import CurrentCard from "./CurrentCard";
 
 export default function StudyPage(props) {
   const params = useParams();
-  const { currentDeck, setCurrentDeck } = props;
-  const [cards, setCards] = useState([]);
-  const [currentCard, setCurrentCard] = useState(1);
+  const {
+    currentDeck,
+    setCurrentDeck,
+    cards,
+    setCards,
+    currentCard,
+    setCurrentCard,
+  } = props;
 
   useEffect(() => {
     readDeck(params.deckId).then(setCurrentDeck);

@@ -15,6 +15,7 @@ export default function Layout() {
   const [decks, setDecks] = useState([]);
   const [currentDeck, setCurrentDeck] = useState({});
   const [cards, setCards] = useState([]);
+  const [currentCard, setCurrentCard] = useState(1);
 
   const homeProps = {
     decks: decks,
@@ -32,6 +33,10 @@ export default function Layout() {
   const studyPageProps = {
     currentDeck: currentDeck,
     setCurrentDeck: setCurrentDeck,
+    cards: cards,
+    setCards: setCards,
+    currentCard: currentCard,
+    setCurrentCard: setCurrentCard,
   };
 
   return (
