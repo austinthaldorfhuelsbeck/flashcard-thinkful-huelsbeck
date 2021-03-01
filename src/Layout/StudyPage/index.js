@@ -7,14 +7,7 @@ import CurrentCard from "./CurrentCard";
 
 export default function StudyPage(props) {
   const params = useParams();
-  const {
-    currentDeck,
-    setCurrentDeck,
-    cards,
-    setCards,
-    currentCard,
-    setCurrentCard,
-  } = props;
+  const { currentDeck, setCurrentDeck, setCards } = props;
 
   // makes sure the nav still works when refreshed
   // or when you get to the page from a weird place
@@ -36,17 +29,11 @@ export default function StudyPage(props) {
     ],
   };
 
-  const currentCardProps = {
-    cards: cards,
-    currentCard: currentCard,
-    setCurrentCard: setCurrentCard,
-  };
-
   return (
     <div className="container study-page">
       <NavBar {...navBarProps} />
       <h2>Study: {currentDeck.name}</h2>
-      <CurrentCard {...currentCardProps} />
+      <CurrentCard {...props} />
     </div>
   );
 }
