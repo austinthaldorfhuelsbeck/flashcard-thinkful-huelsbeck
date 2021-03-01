@@ -6,6 +6,9 @@ import Home from "./Home";
 import CreateDeckPage from "./CreateDeckPage";
 import DeckPage from "./DeckPage";
 import StudyPage from "./StudyPage";
+import EditDeckPage from "./EditDeckPage";
+import AddCardPage from "./AddCardPage";
+import EditCardPage from "./EditCardPage";
 import NotFound from "./NotFound";
 
 export default function Layout() {
@@ -46,6 +49,15 @@ export default function Layout() {
         </Route>
         <Route path="/decks/:deckId/study">
           <StudyPage {...studyPageProps} />
+        </Route>
+        <Route path="/decks/:deckId/edit">
+          <EditDeckPage currentDeck={currentDeck} />
+        </Route>
+        <Route path="/decks/:deckId/cards/new">
+          <AddCardPage />
+        </Route>
+        <Route path="/decks/:deckId/cards/:cardId/edit">
+          <EditCardPage />
         </Route>
         <Route>
           <NotFound />
