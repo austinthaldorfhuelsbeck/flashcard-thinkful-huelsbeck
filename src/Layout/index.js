@@ -62,7 +62,10 @@ export default function Layout() {
           <AddCardPage currentDeck={currentDeck} />
         </Route>
         <Route path="/decks/:deckId/cards/:cardId/edit">
-          <EditCardPage currentDeck={currentDeck} />
+          <EditCardPage
+            currentDeck={currentDeck}
+            setCurrentDeck={setCurrentDeck}
+          />
         </Route>
         <Route>
           <NotFound />

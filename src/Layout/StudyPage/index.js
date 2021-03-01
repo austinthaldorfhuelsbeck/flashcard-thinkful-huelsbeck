@@ -16,6 +16,8 @@ export default function StudyPage(props) {
     setCurrentCard,
   } = props;
 
+  // makes sure the nav still works when refreshed
+  // or when you get to the page from a weird place
   useEffect(() => {
     readDeck(params.deckId).then(setCurrentDeck);
   }, []);
