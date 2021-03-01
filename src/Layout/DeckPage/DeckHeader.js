@@ -12,7 +12,7 @@ export default function DeckHeader({ deck }) {
       </div>
       <div className="row my-3">
         <DeckEditButton />
-        <StudyButton id={deck.id} />
+        <StudyButton deck={deck} />
       </div>
     </div>
   );

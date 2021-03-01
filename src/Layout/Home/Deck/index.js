@@ -5,7 +5,7 @@ import ViewButton from "./ViewButton";
 import StudyButton from "../../StudyButton";
 import DeleteButton from "./DeckDeleteButton";
 
-export default function Deck({ deck, key, setRefresh }) {
+export default function Deck({ deck, key, setRefresh, setCurrentDeck }) {
   const [deckLength, setDeckLength] = useState(0);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Deck({ deck, key, setRefresh }) {
           {renderLength(deckLength)}
           <h6 className="card-subtitle mb-2 text-muted">{deck.description}</h6>
           <ViewButton id={deck.id} />
-          <StudyButton id={deck.id} />
+          <StudyButton deck={deck} setCurrentDeck={setCurrentDeck} />
           <DeleteButton id={deck.id} setRefresh={setRefresh} />
         </div>
       </div>

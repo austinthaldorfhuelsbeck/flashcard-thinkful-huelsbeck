@@ -4,7 +4,7 @@ import { listDecks } from "../../utils/api";
 import CreateDeckButton from "./CreateDeckButton";
 import Deck from "./Deck";
 
-export default function Home({ decks, setDecks }) {
+export default function Home({ decks, setDecks, setCurrentDeck }) {
   const [refresh, setRefresh] = useState([]);
 
   useEffect(() => {
@@ -18,6 +18,7 @@ export default function Home({ decks, setDecks }) {
           deck={deck}
           key={key}
           setDecks={setDecks}
+          setCurrentDeck={setCurrentDeck}
           setRefresh={setRefresh}
         />
       ));
