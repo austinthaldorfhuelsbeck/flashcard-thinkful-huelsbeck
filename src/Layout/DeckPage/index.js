@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { listCards } from "../../utils/api";
+import { listCards, readDeck } from "../../utils/api";
 import NavBar from "../NavBar";
 import DeckHeader from "./DeckHeader";
 import Card from "./Card";
 
-export default function DeckPage({ cards, setCards }) {
+export default function DeckPage(props) {
+  const { cards, setCards, currentDeck, setCurrentDeck } = props;
   const params = useParams();
   const [refresh, setRefresh] = useState([]);
+
+  useEffect(() => {
+    readDeck(params.deckId).then(setCurrentDeck);
+  }, []);
 
   useEffect(() => {
     listCards(params.deckId).then(setCards);
@@ -24,7 +29,7 @@ export default function DeckPage({ cards, setCards }) {
 
   return (
     <div className="container">
-      <NavBar />
+      <NavBar currentPage={currentDeck.name} />
       <DeckHeader />
       <h2>Cards</h2>
       <div class="card">
