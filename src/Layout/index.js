@@ -39,6 +39,11 @@ export default function Layout() {
     setCurrentCard: setCurrentCard,
   };
 
+  const currentDeckProps = {
+    currentDeck: currentDeck,
+    setCurrentDeck: setCurrentDeck,
+  };
+
   return (
     <div className="container">
       <Header />
@@ -56,16 +61,13 @@ export default function Layout() {
           <StudyPage {...studyPageProps} />
         </Route>
         <Route path="/decks/:deckId/edit">
-          <EditDeckPage currentDeck={currentDeck} />
+          <EditDeckPage {...currentDeckProps} />
         </Route>
         <Route path="/decks/:deckId/cards/new">
-          <AddCardPage currentDeck={currentDeck} />
+          <AddCardPage {...currentDeckProps} />
         </Route>
         <Route path="/decks/:deckId/cards/:cardId/edit">
-          <EditCardPage
-            currentDeck={currentDeck}
-            setCurrentDeck={setCurrentDeck}
-          />
+          <EditCardPage {...currentDeckProps} />
         </Route>
         <Route>
           <NotFound />

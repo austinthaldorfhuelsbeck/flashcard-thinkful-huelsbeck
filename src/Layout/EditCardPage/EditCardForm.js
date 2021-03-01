@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 import { updateCard, readCard } from "../../utils/api";
 import FormFront from "./FormFront";
 import FormBack from "./FormBack";
-import CancelButton from "../CancelButton";
-import SubmitButton from "../SubmitButton";
+import CancelButton from "../Form/CancelButton";
+import SubmitButton from "../Form/SubmitButton";
 
 export default function EditCardForm({ cardId, deckId }) {
   const [formData, setFormData] = useState({});

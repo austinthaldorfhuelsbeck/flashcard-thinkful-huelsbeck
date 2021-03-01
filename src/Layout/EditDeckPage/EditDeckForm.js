@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
-import { createDeck } from "../../utils/api";
+import { updateDeck, readDeck } from "../../utils/api";
 import FormName from "../Form/FormName";
 import FormDescription from "../Form/FormDescription";
 import CancelButton from "../Form/CancelButton";
 import SubmitButton from "../Form/SubmitButton";
 
-export default function CreateDeckForm() {
-  const initialFormState = {
-    name: "",
-    description: "",
-  };
-  const [formData, setFormData] = useState({ ...initialFormState });
+export default function EditDeckForm({ cardId, deckId }) {
+  const [formData, setFormData] = useState({});
+  useEffect(() => {
+    readDeck(deckId).then(setFormData);
+  }, []);
 
   const history = useHistory();
   const handleChange = ({ target }) => {
@@ -23,13 +22,11 @@ export default function CreateDeckForm() {
   };
   const handleCancel = (event) => {
     event.preventDefault();
-    history.push("/");
+    history.push(`/decks/${deckId}`);
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    createDeck({ ...formData }).then((deck) =>
-      history.push(`/decks/${deck.id}`)
-    );
+    updateDeck({ ...formData }).then(() => history.push(`/decks/${deckId}`));
   };
 
   const inputProps = { handleChange, formData };

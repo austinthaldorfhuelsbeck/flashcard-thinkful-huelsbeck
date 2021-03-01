@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "../NavBar";
+import AddCardForm from "./AddCardForm";
 
 export default function AddCardPage({ currentDeck }) {
   const navBarProps = {
