@@ -3,17 +3,10 @@ import React from "react";
 import CurrentCardStudy from "./CurrentCardStudy";
 import NotEnoughCards from "./NotEnoughCards";
 
-export default function CurrentCard({ cards, currentCard, setCurrentCard }) {
-  // PROPS //
-  const currentCardProps = {
-    cards: cards,
-    currentCard: currentCard,
-    setCurrentCard: setCurrentCard,
-  };
-
-  // RETURN //
+export default function CurrentCard(props) {
+  const { cards } = props;
   if (cards.length > 2) {
-    return <CurrentCardStudy {...currentCardProps} />;
+    return <CurrentCardStudy {...props} />;
   }
   if (cards.length > 0) {
     return <NotEnoughCards />;
