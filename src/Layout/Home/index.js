@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 
 import { listDecks } from "../../utils/api";
 import CreateDeckButton from "./CreateDeckButton";
+import RenderDecks from "./RenderDecks";
 
 export default function Home(props) {
-  const { decks, setDecks, setCurrentDeck } = props;
-
+  const { setDecks } = props;
   useEffect(() => {
     listDecks().then(setDecks);
   }, []);
@@ -13,7 +13,7 @@ export default function Home(props) {
   return (
     <div className="container home">
       <CreateDeckButton />
-      <RenderDecks decks={decks} />
+      <RenderDecks {...props} />
     </div>
   );
 }
