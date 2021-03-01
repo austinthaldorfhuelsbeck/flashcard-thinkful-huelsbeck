@@ -9,7 +9,7 @@ export default function StudyPage(props) {
   const params = useParams();
   const { currentDeck, setCurrentDeck } = props;
   const [cards, setCards] = useState([]);
-  const [currentCard, setCurrentCard] = useState({});
+  const [currentCard, setCurrentCard] = useState(0);
 
   useEffect(() => {
     readDeck(params.deckId).then(setCurrentDeck);
