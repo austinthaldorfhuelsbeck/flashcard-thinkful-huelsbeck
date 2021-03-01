@@ -19,6 +19,7 @@ export default function CurrentCardStudy(props) {
       )
     ) {
       setCurrentCard(1);
+      flipState();
     } else {
       history.push("/");
     }
@@ -29,7 +30,6 @@ export default function CurrentCardStudy(props) {
       flipState();
     } else {
       handleRestart();
-      flipState();
     }
   };
 

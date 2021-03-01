@@ -3,10 +3,17 @@ import { useHistory } from "react-router-dom";
 import { createDeck } from "../../utils/api";
 
 export default function CreateDeckForm() {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const handleNameChange = (event) => setName(event.target.value);
-  const handleDescriptionChange = (event) => setDescription(event.target.value);
+  const initialFormState = {
+    name: "",
+    description: "",
+  };
+  const [formData, setFormData] = useState({ ...initialFormState });
+  const handleChange = ({ target }) => {
+    setFormData({
+      ...formData,
+      [target.name]: target.value,
+    });
+  };
 
   const history = useHistory();
 
@@ -17,7 +24,7 @@ export default function CreateDeckForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    createDeck({ name, description }).then((deck) =>
+    createDeck({ ...formData }).then((deck) =>
       history.push(`/decks/${deck.id}`)
     );
   };
@@ -31,8 +38,9 @@ export default function CreateDeckForm() {
           className="form-control"
           type="text"
           placeholder="Deck Name"
-          onChange={handleNameChange}
-          value={name}
+          name="name"
+          onChange={handleChange}
+          value={formData.name}
         />
       </div>
       <div className="form-group">
@@ -42,8 +50,9 @@ export default function CreateDeckForm() {
           className="form-control"
           rows="3"
           placeholder="Brief description of the deck"
-          onChange={handleDescriptionChange}
-          value={description}
+          name="description"
+          onChange={handleChange}
+          value={formData.description}
         />
       </div>
       <button onClick={handleCancel} className="btn btn-secondary mx-1">
