@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { createDeck } from "../../utils/api";
-import FormName from "../Form/FormName";
-import FormDescription from "../Form/FormDescription";
-import CancelButton from "../Form/CancelButton";
-import SubmitButton from "../Form/SubmitButton";
+import FormName from "../FormComponents/FormName";
+import FormDescription from "../FormComponents/FormDescription";
+import CancelButton from "../FormComponents/CancelButton";
+import SubmitButton from "../FormComponents/SubmitButton";
 
 export default function CreateDeckForm() {
   const initialFormState = {
