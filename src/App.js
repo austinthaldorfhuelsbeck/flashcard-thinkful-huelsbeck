@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 
 export default function App() {
   useEffect(() => {
-    Aos.init({ duration: 700 });
+    Aos.init({ duration: 500 });
   }, []);
   return (
     <div className="app-routes">

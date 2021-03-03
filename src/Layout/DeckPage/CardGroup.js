@@ -12,7 +12,7 @@ export default function CardGroup({ cards, setRefresh }) {
   };
 
   return (
-    <div class="card my-4">
+    <div class="card my-4" data-aos="fade-up">
       <ul class="list-group list-group-flush">{renderCards(cards)}</ul>
     </div>
   );
