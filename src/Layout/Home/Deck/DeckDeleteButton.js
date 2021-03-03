@@ -15,12 +15,8 @@ export default function DeleteButton({ id }) {
   };
 
   return (
-    <button
-      type="button"
-      className="btn btn-danger mx-1"
-      onClick={handleDelete}
-    >
-      Delete
+    <button type="button" className="btn btn-danger" onClick={handleDelete}>
+      <span class="oi oi-trash"></span>
     </button>
   );
 }

@@ -15,7 +15,7 @@ export default function CardDeleteButton({ id }) {
 
   return (
     <button type="button" className="btn btn-danger" onClick={handleDelete}>
-      Delete
+      <span class="oi oi-trash"></span>
     </button>
   );
 }

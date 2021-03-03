@@ -1,7 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;500&family=Raleway:wght@300&family=Roboto+Slab&display=swap');
+
 body {
   background-color: #C8D0D2;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: .03rem;
 }
 
 .card {
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, .2);
+  font-family: 'Roboto Mono', monospace;
+}
+
+h1, h2, h3, h4, .breadcrumb-item {
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
 }

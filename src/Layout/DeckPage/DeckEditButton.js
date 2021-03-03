@@ -6,7 +6,7 @@ export default function DeckEditButton() {
   return (
     <Link to={`${url}/edit`}>
       <button type="button" className="btn btn-secondary mx-1">
-        Edit
+        <span class="oi oi-pencil mr-1"></span>Edit
       </button>
     </Link>
   );

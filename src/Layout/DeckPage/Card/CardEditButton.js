@@ -6,7 +6,7 @@ export default function CardEditButton({ id }) {
   return (
     <Link to={`${url}/cards/${id}/edit`}>
       <button type="button" className="btn btn-secondary mx-2 my-3">
-        Edit
+        <span class="oi oi-pencil mr-1"></span>Edit
       </button>
     </Link>
   );

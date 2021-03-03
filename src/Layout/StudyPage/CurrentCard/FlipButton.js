@@ -7,7 +7,7 @@ export default function FlipButton({ flipState }) {
       className="btn btn-secondary mx-2 my-3"
       onClick={flipState}
     >
-      Flip
+      <span class="oi oi-action-redo mr-1"></span>Flip
     </button>
   );
 }

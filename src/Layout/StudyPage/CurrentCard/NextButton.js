@@ -8,7 +8,7 @@ export default function NextButton({ isCardFront, incrementCard }) {
         className="btn btn-primary mx-2 my-3"
         onClick={incrementCard}
       >
-        Next
+        <span class="oi oi-arrow-right mr-1"></span>Next
       </button>
     )
   );
