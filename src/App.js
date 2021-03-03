@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import Layout from "./Layout";
+import "./App.css";
 
-/**
- * App is a wrapper for <Layout>, you should not need to change this file.
- */
+// Animate on scroll effects
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 export default function App() {
+  useEffect(() => {
+    Aos.init({ duration: 700 });
+  }, []);
   return (
     <div className="app-routes">
       <Switch>

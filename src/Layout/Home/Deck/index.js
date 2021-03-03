@@ -12,10 +12,12 @@ export default function Deck({ deck, key, setCurrentDeck }) {
   useEffect(() => {
     setLength(0);
     const abortController = new AbortController();
+
     async function loadCards() {
       try {
-        const cardsFromDb = await listCards(deck.id, abortController.signal);
-        setLength(cardsFromDb.length);
+        const lengthFromDb = await listCards(deck.id, abortController.signal)
+          .length;
+        setLength(lengthFromDb);
       } catch (err) {
         if (err.name === "AbortError") {
           console.log("Aborted", length);
@@ -35,7 +37,7 @@ export default function Deck({ deck, key, setCurrentDeck }) {
 
   return (
     <div id={key} className="row my-4">
-      <div className="card">
+      <div className="card" data-aos="fade-up">
         <div className="card-body">
           <h4 className="card-title">{deck.name}</h4>
           <DeckLength length={length} />

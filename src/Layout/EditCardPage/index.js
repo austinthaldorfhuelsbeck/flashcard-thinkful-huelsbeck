@@ -28,8 +28,10 @@ export default function EditCardPage({ currentDeck, setCurrentDeck }) {
   return (
     <div className="container edit-card">
       <NavBar {...navBarProps} />
-      <h2>Edit Card</h2>
-      <EditCardForm {...params} />
+      <div className="col col-md-6 mx-auto my-4">
+        <h2>Edit Card</h2>
+        <EditCardForm {...params} />
+      </div>
     </div>
   );
 }

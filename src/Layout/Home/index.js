@@ -10,6 +10,7 @@ export default function Home(props) {
   useEffect(() => {
     setDecks([]);
     const abortController = new AbortController();
+
     async function loadDecks() {
       try {
         const decksFromDb = await listDecks(abortController.signal);
@@ -34,7 +35,10 @@ export default function Home(props) {
   return (
     <div className="container home">
       <CreateDeckButton />
-      <RenderDecks {...props} />
+      <div className="col col-md-6 mx-auto my-4">
+        <h2>Decks:</h2>
+        <RenderDecks {...props} />
+      </div>
     </div>
   );
 }

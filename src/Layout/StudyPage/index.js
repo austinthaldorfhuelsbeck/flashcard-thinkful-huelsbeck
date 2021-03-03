@@ -32,8 +32,10 @@ export default function StudyPage(props) {
   return (
     <div className="container study-page">
       <NavBar {...navBarProps} />
-      <h2>Study: {currentDeck.name}</h2>
-      <CurrentCard {...props} />
+      <div className="col col-md-6 mx-auto my-4">
+        <h2>Study: {currentDeck.name}</h2>
+        <CurrentCard {...props} />
+      </div>
     </div>
   );
 }
