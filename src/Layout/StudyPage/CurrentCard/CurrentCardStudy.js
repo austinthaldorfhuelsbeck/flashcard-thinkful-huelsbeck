@@ -34,7 +34,7 @@ export default function CurrentCardStudy(props) {
   };
 
   return (
-    <div className="card px-3 my-4">
+    <div className="card px-3 my-4" data-aos="fade-up">
       <div className="card-body">
         <div className="row my-1">
           <h4 className="card-title">
