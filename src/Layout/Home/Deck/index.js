@@ -10,9 +10,27 @@ export default function Deck({ deck, key, setCurrentDeck }) {
   const [length, setLength] = useState(0);
 
   useEffect(() => {
-    listCards(deck.id).then((response) => {
-      setLength(response.length);
-    });
+    setLength(0);
+    const abortController = new AbortController();
+    async function loadCards() {
+      try {
+        const cardsFromDb = await listCards(deck.id, abortController.signal);
+        setLength(cardsFromDb.length);
+      } catch (err) {
+        if (err.name === "AbortError") {
+          console.log("Aborted", length);
+        } else {
+          throw err;
+        }
+      }
+    }
+
+    loadCards();
+
+    return () => {
+      console.log("cleanup", length);
+      abortController.abort();
+    };
   }, []);
 
   return (

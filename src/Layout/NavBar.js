@@ -1,8 +1,9 @@
-// When given a route that is one level from Home,
-// renders Home with a link and CurrentPage without (active).
-// When given a route that is two or more levels from home,
-// renders each level before CurrentPage with links.
-
+/**
+ * When given a route that is one level from Home,
+ * renders Home with a link and CurrentPage without (active).
+ * When given a route that is two or more levels from home,
+ * renders each level before CurrentPage with links.
+ */
 import React from "react";
 import { Link } from "react-router-dom";
 

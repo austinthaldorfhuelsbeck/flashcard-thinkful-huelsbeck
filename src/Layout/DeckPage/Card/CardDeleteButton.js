@@ -1,6 +1,5 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-
 import { deleteCard } from "../../../utils/api";
 
 export default function CardDeleteButton({ id }) {

@@ -17,31 +17,15 @@ export default function Layout() {
   const [cards, setCards] = useState([]);
   const [currentCard, setCurrentCard] = useState(1);
 
-  const homeProps = {
-    decks: decks,
-    setDecks: setDecks,
-    setCurrentDeck: setCurrentDeck,
-  };
-
-  const deckPageProps = {
-    cards: cards,
-    setCards: setCards,
-    currentDeck: currentDeck,
-    setCurrentDeck: setCurrentDeck,
-  };
-
-  const studyPageProps = {
-    currentDeck: currentDeck,
-    setCurrentDeck: setCurrentDeck,
-    cards: cards,
-    setCards: setCards,
-    currentCard: currentCard,
-    setCurrentCard: setCurrentCard,
-  };
-
-  const currentDeckProps = {
-    currentDeck: currentDeck,
-    setCurrentDeck: setCurrentDeck,
+  const props = {
+    decks,
+    setDecks,
+    currentDeck,
+    setCurrentDeck,
+    cards,
+    setCards,
+    currentCard,
+    setCurrentCard,
   };
 
   return (
@@ -49,25 +33,25 @@ export default function Layout() {
       <Header />
       <Switch>
         <Route exact path="/">
-          <Home {...homeProps} />
+          <Home {...props} />
         </Route>
         <Route exact path="/decks/new">
           <CreateDeckPage />
         </Route>
         <Route exact path="/decks/:deckId">
-          <DeckPage {...deckPageProps} />
+          <DeckPage {...props} />
         </Route>
         <Route path="/decks/:deckId/study">
-          <StudyPage {...studyPageProps} />
+          <StudyPage {...props} />
         </Route>
         <Route path="/decks/:deckId/edit">
-          <EditDeckPage {...currentDeckProps} />
+          <EditDeckPage {...props} />
         </Route>
         <Route path="/decks/:deckId/cards/new">
-          <AddCardPage {...currentDeckProps} />
+          <AddCardPage {...props} />
         </Route>
         <Route path="/decks/:deckId/cards/:cardId/edit">
-          <EditCardPage {...currentDeckProps} />
+          <EditCardPage {...props} />
         </Route>
         <Route>
           <NotFound />

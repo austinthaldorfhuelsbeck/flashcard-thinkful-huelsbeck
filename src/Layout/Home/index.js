@@ -5,9 +5,30 @@ import CreateDeckButton from "./CreateDeckButton";
 import RenderDecks from "./RenderDecks";
 
 export default function Home(props) {
-  const { setDecks } = props;
+  const { decks, setDecks } = props;
+
   useEffect(() => {
-    listDecks().then(setDecks);
+    setDecks([]);
+    const abortController = new AbortController();
+    async function loadDecks() {
+      try {
+        const decksFromDb = await listDecks(abortController.signal);
+        setDecks(decksFromDb);
+      } catch (err) {
+        if (err.name === "AbortError") {
+          console.log("Aborted", decks);
+        } else {
+          throw err;
+        }
+      }
+    }
+
+    loadDecks();
+
+    return () => {
+      console.log("cleanup", decks);
+      abortController.abort();
+    };
   }, []);
 
   return (

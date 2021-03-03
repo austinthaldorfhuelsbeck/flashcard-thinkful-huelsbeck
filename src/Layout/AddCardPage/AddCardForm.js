@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import { createCard } from "../../utils/api";
@@ -33,13 +33,13 @@ export default function AddCardForm({ deckId }) {
     );
   };
 
-  const inputProps = { handleChange, formData };
+  const props = { handleChange, handleCancel, formData };
 
   return (
     <form className="py-3" onSubmit={handleSubmit}>
-      <FormFront {...inputProps} />
-      <FormBack {...inputProps} />
-      <CancelButton handleCancel={handleCancel} />
+      <FormFront {...props} />
+      <FormBack {...props} />
+      <CancelButton {...props} />
       <SubmitButton />
     </form>
   );
